@@ -1,0 +1,589 @@
+{
+	"id": "8689af36-59ef-85a5-1159-9546a0e4abef",
+	"name": "Crud - Inking",
+	"description": "Testes de aptidão",
+	"order": [],
+	"folders": [
+		{
+			"name": "Acesso",
+			"description": "",
+			"collectionId": "8689af36-59ef-85a5-1159-9546a0e4abef",
+			"order": [
+				"49067e99-ead1-345f-782c-3e680e857486"
+			],
+			"owner": "5770183",
+			"folders_order": [],
+			"id": "949bcc77-bb5c-0064-2c93-1c256af49c1a"
+		},
+		{
+			"name": "Requisicoes",
+			"description": "Requisições após efetuar o login",
+			"collectionId": "8689af36-59ef-85a5-1159-9546a0e4abef",
+			"order": [
+				"cb6f7358-ed36-a88e-1146-861a08573bf6",
+				"ec6abf6c-900a-54bd-f389-2efea8d65bd7",
+				"f6593281-692a-cefb-d801-0ca656a77dba",
+				"0db062e6-7d9f-52e9-ee29-169046b8ce27",
+				"dfcae230-e2b7-8fea-ca7e-471558819134"
+			],
+			"owner": "5770183",
+			"folders_order": [],
+			"id": "d588c415-5006-6527-57e7-795c1d74f923"
+		}
+	],
+	"folders_order": [
+		"949bcc77-bb5c-0064-2c93-1c256af49c1a",
+		"d588c415-5006-6527-57e7-795c1d74f923"
+	],
+	"timestamp": 1592102617802,
+	"owner": "5770183",
+	"public": false,
+	"requests": [
+		{
+			"id": "0db062e6-7d9f-52e9-ee29-169046b8ce27",
+			"headers": "Authorization: Bearer  1c263d42-f658-45a1-a161-b04ef134d631\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer  1c263d42-f658-45a1-a161-b04ef134d631",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/usuarios/244",
+			"folder": "d588c415-5006-6527-57e7-795c1d74f923",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592103497384,
+			"name": "Atualizando Dados do Usuario",
+			"description": "Informar um objeto no formato json:\n\n{\n        \"id\": \"244\",\n        \"nome\": \"Usuario22\",\n        \"email\": \"usuario2@email.com\",\n        \"data_de_nascimento\": \"1922-24-01\",\n        \"tipo\": \"ru2\",\n        \"endereco\": \"Casa do Oriente n1\",\n        \"senha\": \"1232\",\n        \"active\": true,\n        \"roles\": \"ROLE_USER\"\n}\n\n",
+			"collectionId": "8689af36-59ef-85a5-1159-9546a0e4abef",
+			"rawModeData": "{\n        \"id\": \"244\",\n        \"nome\": \"Usuario22\",\n        \"email\": \"usuario2@email.com\",\n        \"data_de_nascimento\": \"1922-24-01\",\n        \"tipo\": \"ru2\",\n        \"endereco\": \"Casa do Oriente n1\",\n        \"senha\": \"1232\",\n        \"active\": true,\n        \"roles\": \"ROLE_USER\"\n}"
+		},
+		{
+			"id": "49067e99-ead1-345f-782c-3e680e857486",
+			"headers": "Authorization: Basic bWV1Y3J1ZDoxMjM=\nContent-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic bWV1Y3J1ZDoxMjM=",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/oauth/token",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "grant_type",
+					"value": "password",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "username",
+					"value": "NOME DO USUARIO",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "SENHA DO USUARIO",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592103800398,
+			"name": "Autenticaco oauth/token",
+			"description": "Rota para autenticação",
+			"collectionId": "8689af36-59ef-85a5-1159-9546a0e4abef",
+			"responses": []
+		},
+		{
+			"id": "cb6f7358-ed36-a88e-1146-861a08573bf6",
+			"url": "http://localhost:8080/usuarios",
+			"method": "GET",
+			"collectionId": "8689af36-59ef-85a5-1159-9546a0e4abef",
+			"name": "Retorno com erro ao consultar com token inválido",
+			"description": "Listar todos os usuários cadastrados no sistema",
+			"pathVariables": {},
+			"isFromCollection": true,
+			"collectionRequestId": "73f0e832-f714-39c7-88ec-a11e8a48c5cd",
+			"folder": "d588c415-5006-6527-57e7-795c1d74f923",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 401,
+						"name": "Unauthorized"
+					},
+					"time": 30,
+					"headers": [
+						{
+							"name": "cache-control",
+							"key": "cache-control",
+							"value": "no-store",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "connection",
+							"key": "connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "content-type",
+							"key": "content-type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "date",
+							"key": "date",
+							"value": "Sun, 14 Jun 2020 02:47:03 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "keep-alive",
+							"key": "keep-alive",
+							"value": "timeout=60",
+							"description": "Custom header"
+						},
+						{
+							"name": "pragma",
+							"key": "pragma",
+							"value": "no-cache",
+							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+						},
+						{
+							"name": "transfer-encoding",
+							"key": "transfer-encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "www-authenticate",
+							"key": "www-authenticate",
+							"value": "Bearer realm=\"null\", error=\"invalid_token\", error_description=\"Invalid access token: TOKEN\"",
+							"description": "Indicates the authentication scheme that should be used to access the requested entity."
+						},
+						{
+							"name": "x-content-type-options",
+							"key": "x-content-type-options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "x-frame-options",
+							"key": "x-frame-options",
+							"value": "DENY",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"name": "x-xss-protection",
+							"key": "x-xss-protection",
+							"value": "1; mode=block",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"error\":\"invalid_token\",\"error_description\":\"Invalid access token: TOKEN\"}",
+					"language": "json",
+					"rawDataType": "text",
+					"previewType": "text",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"name": "http://localhost:8080/usuarios ",
+					"id": "97327c8a-1265-06e5-c613-8ca7edad8a81",
+					"isSample": true,
+					"scrollToResult": false,
+					"runTests": false,
+					"request": {
+						"url": "http://localhost:8080/usuarios",
+						"pathVariables": {},
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 1c263d42-f658-45a1-a161-b04ef134d631",
+								"description": "",
+								"enabled": true,
+								"warning": ""
+							}
+						],
+						"headers": "Authorization: Bearer 1c263d42-f658-45a1-a161-b04ef134d631\n",
+						"data": null,
+						"method": "GET",
+						"dataMode": "params"
+					}
+				}
+			]
+		},
+		{
+			"id": "dfcae230-e2b7-8fea-ca7e-471558819134",
+			"headers": "Authorization: Bearer  1c263d42-f658-45a1-a161-b04ef134d631\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer  1c263d42-f658-45a1-a161-b04ef134d631",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/usuarios/244",
+			"folder": "d588c415-5006-6527-57e7-795c1d74f923",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592103614802,
+			"name": "Excluir usuário",
+			"description": "Deve ser informado o ID do usuário na URL",
+			"collectionId": "8689af36-59ef-85a5-1159-9546a0e4abef"
+		},
+		{
+			"id": "ec6abf6c-900a-54bd-f389-2efea8d65bd7",
+			"headers": "Authorization: Bearer 1c263d42-f658-45a1-a161-b04ef134d631\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer 1c263d42-f658-45a1-a161-b04ef134d631",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/usuarios",
+			"folder": "d588c415-5006-6527-57e7-795c1d74f923",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592102940633,
+			"name": "Consultando Usuario Por ID - Retorno com sucesso",
+			"description": "Listar todos os usuários cadastrados no sistema",
+			"collectionId": "8689af36-59ef-85a5-1159-9546a0e4abef",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 401,
+						"name": "Unauthorized"
+					},
+					"time": 30,
+					"headers": [
+						{
+							"name": "cache-control",
+							"key": "cache-control",
+							"value": "no-store",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "connection",
+							"key": "connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "content-type",
+							"key": "content-type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "date",
+							"key": "date",
+							"value": "Sun, 14 Jun 2020 02:47:03 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "keep-alive",
+							"key": "keep-alive",
+							"value": "timeout=60",
+							"description": "Custom header"
+						},
+						{
+							"name": "pragma",
+							"key": "pragma",
+							"value": "no-cache",
+							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+						},
+						{
+							"name": "transfer-encoding",
+							"key": "transfer-encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "www-authenticate",
+							"key": "www-authenticate",
+							"value": "Bearer realm=\"null\", error=\"invalid_token\", error_description=\"Invalid access token: TOKEN\"",
+							"description": "Indicates the authentication scheme that should be used to access the requested entity."
+						},
+						{
+							"name": "x-content-type-options",
+							"key": "x-content-type-options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "x-frame-options",
+							"key": "x-frame-options",
+							"value": "DENY",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"name": "x-xss-protection",
+							"key": "x-xss-protection",
+							"value": "1; mode=block",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"error\":\"invalid_token\",\"error_description\":\"Invalid access token: TOKEN\"}",
+					"language": "json",
+					"rawDataType": "text",
+					"previewType": "text",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"name": "http://localhost:8080/usuarios ",
+					"id": "92b3240c-dcb9-5da7-6c51-b1a3b5dcd306",
+					"isSample": true,
+					"scrollToResult": false,
+					"runTests": false,
+					"request": "ec6abf6c-900a-54bd-f389-2efea8d65bd7",
+					"requestObject": {
+						"url": "http://localhost:8080/usuarios",
+						"pathVariables": {},
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 1c263d42-f658-45a1-a161-b04ef134d631",
+								"description": "",
+								"enabled": true,
+								"warning": ""
+							}
+						],
+						"headers": "Authorization: Bearer 1c263d42-f658-45a1-a161-b04ef134d631\n",
+						"data": null,
+						"method": "GET",
+						"dataMode": "params"
+					}
+				}
+			]
+		},
+		{
+			"id": "f6593281-692a-cefb-d801-0ca656a77dba",
+			"headers": "Content-Type: application/json\nAuthorization: Bearer 1c263d42-f658-45a1-a161-b04ef134d631\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer 1c263d42-f658-45a1-a161-b04ef134d631",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/usuarios",
+			"folder": "d588c415-5006-6527-57e7-795c1d74f923",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592103185174,
+			"name": "Cadastrado novo usuário",
+			"description": "Rota para adicionar novo usuário\n\nDeve ser passado um objeto json no formato:\n\n{\n        \"nome\": \"Usuario2\",\n        \"email\": \"usuario2@email.com\",\n        \"data_de_nascimento\": \"1922-24-01\",\n        \"tipo\": \"ru2\",\n        \"endereco\": \"Casa do Oriente n1\",\n        \"senha\": \"1232\",\n        \"active\": true,\n        \"roles\": \"ROLE_USER\"\n}\n\n",
+			"collectionId": "8689af36-59ef-85a5-1159-9546a0e4abef",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 156,
+					"headers": [
+						{
+							"name": "cache-control",
+							"key": "cache-control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "connection",
+							"key": "connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "content-type",
+							"key": "content-type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "date",
+							"key": "date",
+							"value": "Sun, 14 Jun 2020 02:52:40 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "expires",
+							"key": "expires",
+							"value": "0",
+							"description": "Gives the date/time after which the response is considered stale"
+						},
+						{
+							"name": "keep-alive",
+							"key": "keep-alive",
+							"value": "timeout=60",
+							"description": "Custom header"
+						},
+						{
+							"name": "pragma",
+							"key": "pragma",
+							"value": "no-cache",
+							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+						},
+						{
+							"name": "transfer-encoding",
+							"key": "transfer-encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "x-content-type-options",
+							"key": "x-content-type-options",
+							"value": "nosniff",
+							"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+						},
+						{
+							"name": "x-frame-options",
+							"key": "x-frame-options",
+							"value": "DENY",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"name": "x-xss-protection",
+							"key": "x-xss-protection",
+							"value": "1; mode=block",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"id\":245,\"nome\":\"Usuario2\",\"email\":\"usuario2@email.com\",\"data_de_nascimento\":\"1922-24-01\",\"tipo\":\"ru2\",\"endereco\":\"Casa do Oriente n1\",\"senha\":\"1232\",\"active\":true,\"roles\":\"ROLE_USER\"}",
+					"language": "json",
+					"rawDataType": "text",
+					"previewType": "text",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"name": "Cadastrado novo usuário",
+					"id": "54043e82-4d73-ea78-6d11-6271fbbff15b",
+					"request": {
+						"url": "http://localhost:8080/usuarios",
+						"pathVariables": {},
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "",
+								"enabled": true,
+								"warning": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 1c263d42-f658-45a1-a161-b04ef134d631",
+								"description": "",
+								"enabled": true,
+								"warning": ""
+							}
+						],
+						"headers": "Content-Type: application/json\nAuthorization: Bearer 1c263d42-f658-45a1-a161-b04ef134d631\n",
+						"data": " {\n        \"nome\": \"Usuario2\",\n        \"email\": \"usuario2@email.com\",\n        \"data_de_nascimento\": \"1922-24-01\",\n        \"tipo\": \"ru2\",\n        \"endereco\": \"Casa do Oriente n1\",\n        \"senha\": \"1232\",\n        \"active\": true,\n        \"roles\": \"ROLE_USER\"\n}",
+						"method": "POST",
+						"dataMode": "raw"
+					}
+				}
+			],
+			"rawModeData": " {\n        \"nome\": \"Usuario2\",\n        \"email\": \"usuario2@email.com\",\n        \"data_de_nascimento\": \"1922-24-01\",\n        \"tipo\": \"ru2\",\n        \"endereco\": \"Casa do Oriente n1\",\n        \"senha\": \"1232\",\n        \"active\": true,\n        \"roles\": \"ROLE_USER\"\n}"
+		}
+	]
+}

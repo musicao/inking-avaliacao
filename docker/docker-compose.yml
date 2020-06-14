@@ -1,0 +1,22 @@
+version: '3.7'
+
+services:
+  mysqlsrv:
+    image:  mariadb:focal
+    container_name: 'mysql-crud'
+    environment:
+      MYSQL_ROOT_PASSWORD: "banco2020!"
+      MYSQL_DATABASE: "crud"
+    ports:
+      - "33006:3306"
+    volumes:
+      - crud-data:/var/lib/mysql
+    networks:
+      - database-network
+
+volumes:
+  crud-data: {}
+
+networks:
+  database-network:
+    driver: bridge
